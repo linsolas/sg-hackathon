@@ -1,5 +1,13 @@
 'use strict';
 
+
+angular.module('sgHackathonApp')
+    .controller('ListCtrl', function ($scope, $mdDialog, $mdToast) {
+
+        $scope.selectedIndex = 0;
+
+});
+
 angular.module('sgHackathonApp')
   .controller('ListCtrl', function ($scope, $mdDialog, $mdToast) {
 
