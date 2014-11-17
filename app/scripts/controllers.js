@@ -3,11 +3,56 @@
 
 
 angular.module('sgHackathonApp')
-    .controller('HomeCtrl', function ($scope, $location) {
+    .controller('HomeCtrl', function ($rootScope, $scope, $location) {
 
         $scope.goTo = function(path) {
             $location.url('/' + path);
-        }
+        };
+
+        $rootScope.categories = [
+            {
+                "name": "Bancaire",
+                "count": 4,
+                "icon": "fa-bank",
+                "newDocs": 1,
+                "newCategory": false
+            },
+            {
+                "name": "Santé",
+                "count": 12,
+                "icon": "fa-stethoscope",
+                "newDocs": 2,
+                "newCategory": false
+            },
+            {
+                "name": "Habitation",
+                "count": 21,
+                "icon": "fa-home",
+                "newDocs": 0,
+                "newCategory": false
+            },
+            {
+                "name": "Transports",
+                "count": 5,
+                "icon": "fa-space-shuttle",
+                "newDocs": 0,
+                "newCategory": false
+            },
+            {
+                "name": "Administratif",
+                "count": 123,
+                "icon": "fa-building",
+                "newDocs": 0,
+                "newCategory": false
+            },
+            {
+                "name": "Loisirs",
+                "count": 27,
+                "icon": "fa-soccer-ball-o",
+                "newDocs": 1,
+                "newCategory": false
+            }
+        ];
 
 
     }
@@ -20,10 +65,15 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location) {
 
-        $rootScope.showFiat = false;
 
-        $scope.addFiat = function() {
-            $rootScope.showFiat = true;
+        $scope.addFiat = function(str) {
+            $rootScope.categories.push({
+                "name": str,
+                "count": 0,
+                "icon": "fa-car",
+                "newDocs": 0,
+                "newCategory": true
+            });
             $mdBottomSheet.hide();
         };
 

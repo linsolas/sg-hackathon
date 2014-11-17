@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name sgHackathonApp
- * @description
- * # sgHackathonApp
- *
- * Main module of the application.
- */
 angular
   .module('sgHackathonApp', [
     'ngMaterial',
@@ -36,3 +28,9 @@ angular
         redirectTo: '/'
       });
   });
+
+angular.module('sgHackathonApp').filter('startFrom', function() {
+    return function(arr, start) {
+        return (arr || []).slice(start);
+    };
+});

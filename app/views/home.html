@@ -1,39 +1,29 @@
 
 <div layout="horizontal">
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-bank"></i> Bancaire</h2>
-        <strong>12</strong> documents
+    <md-card flex="30" ng-click="goTo('list')" ng-repeat="cat in categories | startFrom: 0 | limitTo: 3">
+        <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>
+        <span ng-show="cat.newCategory" class="label label-success">Nouveau</span>
+        <strong>{{ cat.count }}</strong> document{{ cat.count > 1 ? 's' : '' }}
         <br>
-        <span class="badge">3 nouveaux</span>
-    </md-card>
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-stethoscope"></i> Santé</h2>
-        <strong>21</strong> documents
-    </md-card>
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-home"></i> Habitation</h2>
-        <strong>4</strong> documents
+        <span class="bad" ng-show="cat.newDocs > 0">{{ cat.newDocs }} nouveau{{ cat.newDocs > 1 ? 'x' : '' }}</span>
     </md-card>
 </div>
-
 <div layout="horizontal">
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-space-shuttle"></i> Transport</h2>
-        <strong>2</strong> documents
+    <md-card flex="30" ng-click="goTo('list')" ng-repeat="cat in categories | startFrom: 3 | limitTo: 3">
+        <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>
+        <span ng-show="cat.newCategory" class="label label-success">Nouveau</span>
+        <strong>{{ cat.count }}</strong> document{{ cat.count > 1 ? 's' : '' }}
+        <br>
+        <span class="bad" ng-show="cat.newDocs > 0">{{ cat.newDocs }} nouveau{{ cat.newDocs > 1 ? 'x' : '' }}</span>
     </md-card>
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-building"></i> Administratif</h2>
-        <strong>123</strong> documents
-    </md-card>
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-soccer-ball-o"></i> Loisirs</h2>
-        <strong>5</strong> documents
+</div>
+<div layout="horizontal">
+    <md-card flex="30" ng-click="goTo('list')" ng-repeat="cat in categories | startFrom: 6 | limitTo: 3">
+        <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>
+        <span ng-show="cat.newCategory" class="label label-success">Nouveau</span>
+        <strong>{{ cat.count }}</strong> document{{ cat.count > 1 ? 's' : '' }}
+        <br>
+        <span class="bad" ng-show="cat.newDocs > 0">{{ cat.newDocs }} nouveau{{ cat.newDocs > 1 ? 'x' : '' }}</span>
     </md-card>
 </div>
 
-<div layout="horizontal" ng-show="showFiat">
-    <md-card flex="30" ng-click="goTo('list')">
-        <h2><i class="fa fa-car"></i> Fiat 500</h2> <span class="label label-success">new</span>
-        <strong>0</strong> document
-    </md-card>
-</div>
