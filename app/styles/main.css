@@ -105,9 +105,19 @@ header {
 
 .content {
     background: linear-gradient(white, #EEE);
-    padding-bottom: 100px;
+    /*padding-bottom: 50px;*/
+    height: 100%;
+    /*display: table-row;*/
+    flex-direction: column;
 }
 
 footer {
     text-align: center;
+    border-top: solid 1px darkgray;
+    height: 25px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    font-size: 20px;
 }

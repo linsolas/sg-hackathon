@@ -33,11 +33,13 @@
   <div class="clearfix"></div>
 
 
-  <div ng-view=""></div>
+  <div class="content">
+      <div ng-view=""></div>
+  </div>
 
 
-  <footer class="footer">
-      <md-button ng-click="showListBottomSheet($event)">Mes Actions</md-button>
+  <footer>
+      <md-button ng-click="showListBottomSheet($event)"><i class="fa fa-random"></i> Mes Actions</md-button>
   </footer>
 
     <!-- build:js(.) scripts/oldieshim.js -->

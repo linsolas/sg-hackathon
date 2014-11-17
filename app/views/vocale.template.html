@@ -3,7 +3,11 @@
         <h2><i class="fa fa-microphone"></i> Recherche vocale</h2>
         <p>Que souhaitez-vous rechercher ?</p>
 
-        <img src="images/microphone.png">
+
+        <div style="margin: 20px; padding-left: 60px; padding-top: 40px;">
+            <md-progress-circular mode="indeterminate" diameter="80"></md-progress-circular>
+        </div>
+        <!--<img src="images/microphone.png">-->
 
         <div ng-show="displayResult">
             Vous avez demandé: <strong>dernière facture EDF</strong>
