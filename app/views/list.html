@@ -16,7 +16,10 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="doc in documents" ng-click="previewDoc(doc)">
-                        <td>{{ doc.name }}</td>
+                        <td>
+                            <img src="images/{{ doc.ext }}.png" alt="PDF"/>
+                            {{ doc.name }}
+                        </td>
                         <td>
                             {{ doc.date }}
                             <span ng-if="doc.newDoc" class="label label-success">New</span>
@@ -25,18 +28,18 @@
                 </tbody>
             </table>
 
-            <md-button class="md-fab md-primary" ng-click="dialogBasic($event)"><i class="fa fa-plus"></i> Add</md-button>
+            <md-button class="md-fab md-primary pull-right" ng-click="dialogBasic($event)"><i class="fa fa-plus"></i> Add</md-button>
         </md-card>
 
 
 
         <md-card flex="45" ng-show="preview">
-          <h3>{{ preview.name }}</h3>
-
+            <h3>{{ preview.name }}</h3>
             <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-download" ></i> </md-button>
             <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-envelope"></i> </md-button>
             <md-button class="md-fab icon-capture"  style="width: 30px; height: 30px" target="_blank" ng-href="{{preview.document}}" ><i class="fa fa-eye"></i> </md-button>
-          <br><img ng-src="{{preview.image}}" width="400px">
+            <hr>
+            <img ng-src="{{preview.image}}" width="400px">
         </md-card>
 
     </div>

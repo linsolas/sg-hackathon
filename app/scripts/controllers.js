@@ -116,6 +116,7 @@ angular.module('sgHackathonApp')
             "date": "18/11/2014",
             "image": "images/imageAssurance.png",
             "document": "documents/assurance.pdf",
+            "ext": "pdf",
             "newDoc": true
         },
         {
@@ -123,20 +124,23 @@ angular.module('sgHackathonApp')
             "date": "02/03/2014",
             "image": "images/imageLivretA.png",
             "document": "documents/livretA.pdf",
+            "ext": "pdf",
             "newDoc": false
         },
         {
-            "name": "Test",
+            "name": "Mon document",
             "date": "17/11/2014",
             "image": "images/yeoman.png",
             "document": "images/yeoman.png",
+            "ext": "doc",
             "newDoc": false
         },
         {
-            "name": "Une image",
+            "name": "Mes comptes",
             "date": "15/11/2014",
             "image": "images/yeoman.png",
             "document": "images/yeoman.png",
+            "ext": "xls",
             "newDoc": false
         }
     ];
