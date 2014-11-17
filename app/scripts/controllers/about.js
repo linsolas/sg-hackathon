@@ -7,7 +7,19 @@ angular.module('sgHackathonApp')
         {
             "name": "Relevés",
             "type": "folder",
-            "date": null
+            "date": null,
+            "content": [
+                {
+                    "name": "Relevé compte courant 10/2014",
+                    "type": "PDF",
+                    "date": "01/11/2014"
+                },
+                {
+                    "name": "Relevé compte courant 09/2014",
+                    "type": "PDF",
+                    "date": "01/10/2014"
+                }
+            ]
         },
         {
             "name": "Contrats",

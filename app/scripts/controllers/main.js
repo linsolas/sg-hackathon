@@ -3,11 +3,7 @@
 angular.module('sgHackathonApp')
   .controller('MainCtrl', function ($scope) {
 
-        $scope.data = {
-            selectedIndex: 0
-        };
+        $scope.selectedIndex = 0;
 
-
-
-
-  });
+}
+);

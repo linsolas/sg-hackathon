@@ -1,26 +1,50 @@
 <div ng-controller="ListCtrl">
 
 
-    <md-content>
-        <md-list>
-            <md-item ng-repeat="doc in documents">
-                <md-item-content>
-                    <div class="md-tile-left">
-                        <i class="fa fa-folder" ng-show="doc.type == 'folder'"></i>
-                        <i class="fa fa-text" ng-show="doc.type == 'text'"></i>
-                        <i class="fa fa-image" ng-show="doc.type == 'image'"></i>
-                        <!--<img ng-src="{{document.type}}" class="face">-->
-                    </div>
-                    <div class="md-tile-content">
-                        <h3>{{doc.name}}</h3>
-                        <p>
-                            {{doc.date}}
-                        </p>
-                    </div>
-                </md-item-content>
-            </md-item>
-        </md-list>
-    </md-content>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nom du document</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="doc in documents">
+                <td>
+                    <i class="fa fa-folder" ng-if="doc.type == 'folder'" style="color: blue; font-size: 18px"></i>
+                    <i class="fa fa-file" ng-if="doc.type != 'folder'"></i>
+                </td>
+                <td>{{ doc.name }}</td>
+                <td>{{ doc.date }}</td>
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+
+    <!--<md-content>-->
+        <!--<md-list>-->
+            <!--<md-item ng-repeat="doc in documents">-->
+                <!--<md-item-content>-->
+                    <!--<div class="md-tile-left">-->
+                        <!--<i class="fa fa-folder" ng-show="doc.type == 'folder'"></i>-->
+                        <!--<i class="fa fa-text" ng-show="doc.type == 'text'"></i>-->
+                        <!--<i class="fa fa-image" ng-show="doc.type == 'image'"></i>-->
+                        <!--&lt;!&ndash;<img ng-src="{{document.type}}" class="face">&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div class="md-tile-content">-->
+                        <!--<h3>{{doc.name}}</h3>-->
+                        <!--<p>-->
+                            <!--{{doc.date}}-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</md-item-content>-->
+            <!--</md-item>-->
+        <!--</md-list>-->
+    <!--</md-content>-->
 
     <md-button class="md-fab md-primary" ng-click="dialogBasic($event)"><i class="fa fa-plus"></i> Add</md-button>
 
