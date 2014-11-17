@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10341ad7-3112-4657-8c4f-abe8797e60af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/about.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/about.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/main.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sg-hackathon.iws" />
@@ -444,7 +441,7 @@
       <created>1416048659463</created>
       <updated>1416048659463</updated>
       <workItem from="1416048669492" duration="873000" />
-      <workItem from="1416220467677" duration="5453000" />
+      <workItem from="1416220467677" duration="5489000" />
     </task>
     <task id="LOCAL-00001" summary="Premier écran">
       <created>1416225359885</created>
@@ -454,11 +451,15 @@
       <created>1416225869788</created>
       <updated>1416225869788</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1416228133993</created>
+      <updated>1416228133993</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6326000" />
+    <option name="totallyTimeSpent" value="6362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -508,7 +509,8 @@
     </option>
     <MESSAGE value="Premier écran" />
     <MESSAGE value="correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
