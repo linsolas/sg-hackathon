@@ -28,6 +28,10 @@ angular
         templateUrl: 'views/list.html',
         controller: 'ListCtrl'
       })
+        .when('/search', {
+            templateUrl: 'views/search.html',
+            controller: 'SearchCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       });

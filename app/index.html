@@ -28,9 +28,10 @@
           <md-button class="md-primary" ng-click="goToHome()">Le Coffre</md-button>
           <md-button ng-if="where() == 'bancaire'">Mon Espace Bancaire</md-button>
 
-          <!--<div style="float: right">-->
-              <!--<md-text-float label="Recherche" ng-model="search"></md-text-float>-->
-          <!--</div>-->
+          <div style="float: right">
+              <md-text-float label="Recherche" ng-model="search"></md-text-float>
+              <md-button class="md-fab" ng-click="dialogBasic($event)"><i class="fa fa-microphone"></i></md-button>
+          </div>
       </header>
   </div>
 

@@ -18,7 +18,7 @@ angular.module('sgHackathonApp')
 
 
 angular.module('sgHackathonApp')
-    .controller('MainCtrl', function ($scope, $mdBottomSheet, $location) {
+    .controller('MainCtrl', function ($scope, $mdBottomSheet, $mdDialog, $location) {
 
         $scope.goToHome = function() {
             $location.url('/');
@@ -45,6 +45,18 @@ angular.module('sgHackathonApp')
                 targetEvent: $event
             }).then(function(clickedItem) {
                 $scope.alert = clickedItem.name + ' clicked!';
+            });
+        };
+
+        $scope.dialogBasic = function(ev) {
+            $mdDialog.show({
+                templateUrl: 'views/vocale.template.html',
+                targetEvent: ev,
+                controller: 'DialogController'
+            }).then(function() {
+                $scope.alert = 'You said "Okay".';
+            }, function() {
+                $scope.alert = 'You cancelled the dialog.';
             });
         };
 
@@ -134,7 +146,7 @@ angular.module('sgHackathonApp')
 
 
 angular.module('sgHackathonApp')
-    .controller('DialogController', function ($rootScope, $scope, $mdDialog) {
+    .controller('DialogController', function ($rootScope, $scope, $mdDialog, $timeout, $location) {
 
         $scope.hide = function() {
             $mdDialog.hide();
@@ -149,5 +161,25 @@ angular.module('sgHackathonApp')
             });
             $mdDialog.hide();
         };
+
+        $scope.displayResult = false;
+
+        $timeout(function() {
+            $scope.displayResult = true;
+        }, 3000);
+
+        $timeout(function() {
+            $mdDialog.hide();
+            $location.url('/search');
+        }, 5000);
+
+
+});
+
+
+angular.module('sgHackathonApp')
+    .controller('SearchCtrl', function ($scope) {
+
+
 
 });
