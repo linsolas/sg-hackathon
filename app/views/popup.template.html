@@ -3,11 +3,11 @@
         <h2><i class="fa fa-plus"></i> Ajouter un document</h2>
         <p>Merci de choisir la source du document</p>
 
-        <md-button class="md-raised icon-capture"><i class="fa fa-camera"></i> Photo</md-button>
-        <md-button class="md-raised icon-capture"><i class="fa fa-image"></i> Image</md-button>
-        <md-button class="md-raised icon-capture"><i class="fa fa-dropbox"></i> Dropbox</md-button>
-        <md-button class="md-raised icon-capture"><i class="fa fa-envelope"></i> Mail</md-button>
-        <md-button class="md-raised icon-capture"><i class="fa fa-file"></i> Fichier local</md-button>
+        <md-button class="md-raised icon-capture" ng-click="addDoc('photo')"><i class="fa fa-camera"></i> Photo</md-button>
+        <md-button class="md-raised icon-capture" ng-click="addDoc('image')"><i class="fa fa-image"></i> Image</md-button>
+        <md-button class="md-raised icon-capture" ng-click="addDoc('dropbox')"><i class="fa fa-dropbox"></i> Dropbox</md-button>
+        <md-button class="md-raised icon-capture" ng-click="addDoc('mail')"><i class="fa fa-envelope"></i> Mail</md-button>
+        <md-button class="md-raised icon-capture" ng-click="addDoc('fichier')"><i class="fa fa-file"></i> Fichier local</md-button>
     </md-content>
     <div class="md-actions" layout="horizontal" layout-align="end">
         <md-button class="md-warn" ng-click="hide()">

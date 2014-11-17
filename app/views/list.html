@@ -1,0 +1,45 @@
+<div ng-controller="ListCtrl">
+
+
+    <div layout="horizontal">
+        <md-card flex="45">
+            <h2><i class="fa fa-bank"></i> Contrats</h2>
+            <strong>{{ documents.length }}</strong> documents
+            <br>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom du document</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="doc in documents" ng-click="previewDoc(doc)">
+                        <td>{{ doc.name }}</td>
+                        <td>
+                            {{ doc.date }}
+                            <span ng-if="doc.newDoc" class="badge">New</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <md-button class="md-fab md-primary" ng-click="dialogBasic($event)"><i class="fa fa-plus"></i> Add</md-button>
+        </md-card>
+
+
+
+        <md-card flex="45" ng-show="preview">
+            <img ng-src="preview.image">
+            <h3>{{ preview.name }}</h3>
+
+            <md-button class="md-fab icon-capture"><i class="fa fa-download"></i> </md-button>
+            <md-button class="md-fab icon-capture"><i class="fa fa-envelope"></i> </md-button>
+            <md-button class="md-fab icon-capture"><i class="fa fa-eye"></i> </md-button>
+        </md-card>
+
+    </div>
+
+
+</div>

@@ -28,9 +28,8 @@
               Mes Actions
           </md-button>
           <md-button class="md-primary" ng-click="goToHome()">Le Coffre</md-button>
-          <md-button>Mon Espace Bancaire</md-button>
+          <md-button ng-if="where() == 'bancaire'">Mon Espace Bancaire</md-button>
       </header>
-
   </div>
 
 

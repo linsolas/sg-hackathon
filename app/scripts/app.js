@@ -24,8 +24,8 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
+      .when('/list', {
+        templateUrl: 'views/list.html',
         controller: 'ListCtrl'
       })
       .otherwise({

@@ -3,9 +3,11 @@
 
 
 angular.module('sgHackathonApp')
-    .controller('HomeCtrl', function ($scope) {
+    .controller('HomeCtrl', function ($scope, $location) {
 
-
+        $scope.goTo = function(path) {
+            $location.url('/' + path);
+        }
 
 
     }
@@ -19,7 +21,14 @@ angular.module('sgHackathonApp')
     .controller('MainCtrl', function ($scope, $mdBottomSheet, $location) {
 
         $scope.goToHome = function() {
-            $location.path = '/';
+            $location.url('/');
+        };
+
+        $scope.where = function() {
+            var url = $location.url();
+            if (url == '/list') {
+                return 'bancaire';
+            }
         };
 
         $scope.items = [
@@ -44,42 +53,41 @@ angular.module('sgHackathonApp')
     });
 
 angular.module('sgHackathonApp')
-  .controller('ListCtrl', function ($scope, $mdDialog, $mdToast) {
+  .controller('ListCtrl', function ($rootScope, $scope, $mdDialog, $mdToast) {
 
-    $scope.documents = [
+        $scope.preview = null;
+
+        $scope.previewDoc = function(doc) {
+            $scope.preview = doc;
+        };
+
+        $rootScope.documents = [
         {
-            "name": "Relevés",
-            "type": "folder",
-            "date": null,
-            "content": [
-                {
-                    "name": "Relevé compte courant 10/2014",
-                    "type": "PDF",
-                    "date": "01/11/2014"
-                },
-                {
-                    "name": "Relevé compte courant 09/2014",
-                    "type": "PDF",
-                    "date": "01/10/2014"
-                }
-            ]
+            "name": "Contrat assurance vie",
+            "date": "01/02/2013",
+            "image": "images/screen1.png",
+            "newDoc": false
         },
         {
-            "name": "Contrats",
-            "type": "folder",
-            "date": null
+            "name": "Livret A",
+            "date": "02/03/2014",
+            "image": "toto",
+            "newDoc": false
         },
         {
             "name": "Test",
-            "type": "text",
-            "date": "17/11/2014"
+            "date": "17/11/2014",
+            "image": "tata",
+            "newDoc": false
         },
         {
             "name": "Une image",
-            "type": "image",
-            "date": "15/11/2014"
+            "date": "15/11/2014",
+            "image": "titi",
+            "newDoc": true
         }
     ];
+
 
 
         $scope.dialogBasic = function(ev) {
@@ -116,16 +124,30 @@ angular.module('sgHackathonApp')
             right: true
         };
 
-        $scope.test();
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
+//        $scope.test();
 
 
     });
 
 
 angular.module('sgHackathonApp')
-    .controller('DialogController', function ($scope, $mdDialog) {
+    .controller('DialogController', function ($rootScope, $scope, $mdDialog) {
 
         $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
+        $scope.addDoc = function(type) {
+            $rootScope.documents.push({
+                "name": "Nouveau " + type,
+                "date": "18/11/2014",
+                "image": "",
+                "newDoc": true
+            });
             $mdDialog.hide();
         };
 
