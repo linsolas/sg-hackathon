@@ -20,6 +20,12 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location) {
 
+        $rootScope.showFiat = false;
+
+        $scope.showFiatCategory = function() {
+            $rootScope.showFiat = true;
+        };
+
         $scope.goToHome = function() {
             $location.url('/');
         };
@@ -37,8 +43,6 @@ angular.module('sgHackathonApp')
             });
         };
 
-
-
         $scope.dialogBasic = function(ev) {
             $mdDialog.show({
                 templateUrl: 'views/vocale.template.html',
@@ -50,14 +54,6 @@ angular.module('sgHackathonApp')
                 $scope.alert = 'You cancelled the dialog.';
             });
         };
-
-        $rootScope.showFiat = false;
-
-        $scope.addFiat = function() {
-            $rootScope.showFiat = true;
-            $mdBottomSheet.hide();
-        };
-
 
 
     });
