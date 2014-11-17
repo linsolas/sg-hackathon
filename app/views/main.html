@@ -1,9 +1,25 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div ng-controller="ListCtrl">
+    <md-content>
+        <md-list>
+            <md-item ng-repeat="doc in documents">
+                <md-item-content>
+                    <div class="md-tile-left">
+                        <i class="fa fa-folder" ng-show="doc.type == 'folder'"></i>
+                        <i class="fa fa-text" ng-show="doc.type == 'text'"></i>
+                        <i class="fa fa-image" ng-show="doc.type == 'image'"></i>
+                        <!--<img ng-src="{{document.type}}" class="face">-->
+                    </div>
+                    <div class="md-tile-content">
+                        <h3>{{doc.name}}</h3>
+                        <p>
+                            {{doc.date}}
+                        </p>
+                    </div>
+                </md-item-content>
+            </md-item>
+        </md-list>
+    </md-content>
 
+    <md-button class="md-fab md-primary" ng-click="dialogBasic($event)"><i class="fa fa-plus"></i> Add</md-button>
+
+</div>
