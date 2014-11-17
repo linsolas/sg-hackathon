@@ -19,16 +19,18 @@
   </head>
   <body ng-app="sgHackathonApp">
 
-<div class="header">
-  <img src="images/logo_header_refonte_2010.gif">
-</div>
   <div ng-controller="MainCtrl">
-      <header>
+      <header style="margin-bottom: 10px;">
+          <img src="images/logo_header_refonte_2010.gif">
           <md-button ng-click="showListBottomSheet($event)">
               Mes Actions
           </md-button>
           <md-button class="md-primary" ng-click="goToHome()">Le Coffre</md-button>
           <md-button ng-if="where() == 'bancaire'">Mon Espace Bancaire</md-button>
+
+          <!--<div style="float: right">-->
+              <!--<md-text-float label="Recherche" ng-model="search"></md-text-float>-->
+          <!--</div>-->
       </header>
   </div>
 
