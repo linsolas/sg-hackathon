@@ -1,26 +1,20 @@
-<md-bottom-sheet class="md-grid">
+<md-bottom-sheet class="md-list md-has-header">
+    <md-subheader>Vos actions</md-subheader>
     <md-list>
-        <md-item ng-repeat="item in items" ng-click="listItemClick($index)">
+        <md-item>
             <md-button class="md-grid-item-content">
-                <div class="md-icon-container">
-                    <i class="fa fa-{{item.icon}}"></i>
-                    <br/>
-                    {{ item.name }}
-                </div>
-                <!--<p class="md-grid-text"> {{ item.name }} </p>-->
+                <div class="md-icon-container"><i class="fa fa-share"></i> Partager</div>
             </md-button>
-
+        </md-item>
+        <md-item>
+            <md-button class="md-grid-item-content" ng-click="addFiat();">
+                <div class="md-icon-container"><i class="fa fa-plus"></i> Nouvelle catégorie</div>
+            </md-button>
+        </md-item>
+        <md-item>
+            <md-button class="md-grid-item-content">
+                <div class="md-icon-container"><i class="fa fa-cogs"></i> Administrer</div>
+            </md-button>
         </md-item>
     </md-list>
 </md-bottom-sheet>
-<!--<md-bottom-sheet class="md-list md-has-header">-->
-    <!--<md-subheader>Comment Actions</md-subheader>-->
-    <!--<md-list>-->
-        <!--<md-item ng-repeat="item in items" ng-click="listItemClick($index)">-->
-            <!--<md-button>-->
-                <!--<i class="fa fa-{{item.icon}}"></i>-->
-                <!--<span class="md-inline-list-icon-label">{{ item.name }}</span>-->
-            <!--</md-button>-->
-        <!--</md-item>-->
-    <!--</md-list>-->
-<!--</md-bottom-sheet>-->

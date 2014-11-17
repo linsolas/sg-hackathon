@@ -18,33 +18,22 @@ angular.module('sgHackathonApp')
 
 
 angular.module('sgHackathonApp')
-    .controller('MainCtrl', function ($scope, $mdBottomSheet, $mdDialog, $location) {
+    .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location) {
 
         $scope.goToHome = function() {
             $location.url('/');
         };
 
         $scope.where = function() {
-            var url = $location.url();
-            if (url == '/list') {
-                return 'bancaire';
-            }
+            return $location.url().substring(1);
         };
 
-        $scope.items = [
-            { name: 'Partager', icon: 'share' },
-            { name: 'Nouvelle catégorie', icon: 'copy' },
-            { name: 'Administrer', icon: 'print' },
-        ];
-
         $scope.showListBottomSheet = function($event) {
-            $scope.alert = '';
             $mdBottomSheet.show({
                 templateUrl: 'views/bottom-menu.template.html',
                 controller: 'MainCtrl',
                 targetEvent: $event
             }).then(function(clickedItem) {
-                $scope.alert = clickedItem.name + ' clicked!';
             });
         };
 
@@ -61,6 +50,14 @@ angular.module('sgHackathonApp')
                 $scope.alert = 'You cancelled the dialog.';
             });
         };
+
+        $rootScope.showFiat = false;
+
+        $scope.addFiat = function() {
+            $rootScope.showFiat = true;
+            $mdBottomSheet.hide();
+        };
+
 
 
     });
