@@ -32,10 +32,9 @@ angular.module('sgHackathonApp')
         };
 
         $scope.items = [
-            { name: 'Share', icon: 'share' },
-            { name: 'Upload', icon: 'upload' },
-            { name: 'Copy', icon: 'copy' },
-            { name: 'Print', icon: 'print' },
+            { name: 'Partager', icon: 'share' },
+            { name: 'Nouvelle catégorie', icon: 'copy' },
+            { name: 'Administrer', icon: 'print' },
         ];
 
         $scope.showListBottomSheet = function($event) {
