@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="bower_components/jquery/src/manipulation/|bower_components/jquery/src/ajax/var/|bower_components/angular-material/|bower_components/angular/|app/scripts/controllers/|bower_components/angular-scenario/|bower_components/angular-cookies/|test/|bower_components/angular-touch/|bower_components/jquery/src/core/var/|bower_components/bootstrap/|bower_components/jquery/src/queue/|bower_components/jquery/src/exports/|bower_components/jquery/src/event/|bower_components/angular-mocks/|bower_components/jquery/src/data/|bower_components/angular-sanitize/|bower_components/jquery/src/var/|app/scripts/|bower_components/es5-shim/|bower_components/angular-route/|bower_components/jquery/src/core/|bower_components/jquery/src/data/var/|bower_components/jquery/src/|bower_components/angular-animate/|bower_components/jquery/src/manipulation/var/|bower_components/jquery/src/traversing/var/|bower_components/jquery/src/effects/|test/spec/controllers/|bower_components/jquery/src/traversing/|bower_components/angular-resource/|bower_components/jquery/src/css/var/|bower_components/hammerjs/|bower_components/angular-aria/|bower_components/jquery/src/ajax/|bower_components/jquery/src/attributes/|bower_components/jquery/src/css/|bower_components/json3/lib/|bower_components/bootstrap/js/|bower_components/bootstrap/grunt/" kind="src" path=""/>
+	<classpathentry excluding="controllers/" kind="src" path="app/scripts"/>
+	<classpathentry kind="src" path="app/scripts/controllers"/>
+	<classpathentry kind="src" path="bower_components/angular"/>
+	<classpathentry kind="src" path="bower_components/angular-animate"/>
+	<classpathentry kind="src" path="bower_components/angular-aria"/>
+	<classpathentry kind="src" path="bower_components/angular-cookies"/>
+	<classpathentry kind="src" path="bower_components/angular-material"/>
+	<classpathentry kind="src" path="bower_components/angular-mocks"/>
+	<classpathentry kind="src" path="bower_components/angular-resource"/>
+	<classpathentry kind="src" path="bower_components/angular-route"/>
+	<classpathentry kind="src" path="bower_components/angular-sanitize"/>
+	<classpathentry kind="src" path="bower_components/angular-scenario"/>
+	<classpathentry kind="src" path="bower_components/angular-touch"/>
+	<classpathentry excluding="js/|grunt/" kind="src" path="bower_components/bootstrap"/>
+	<classpathentry kind="src" path="bower_components/bootstrap/grunt"/>
+	<classpathentry kind="src" path="bower_components/bootstrap/js"/>
+	<classpathentry kind="src" path="bower_components/es5-shim"/>
+	<classpathentry kind="src" path="bower_components/hammerjs"/>
+	<classpathentry excluding="manipulation/|ajax/var/|core/var/|queue/|exports/|event/|data/|var/|core/|data/var/|manipulation/var/|traversing/var/|effects/|traversing/|css/var/|ajax/|attributes/|css/" kind="src" path="bower_components/jquery/src"/>
+	<classpathentry excluding="var/" kind="src" path="bower_components/jquery/src/ajax"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/ajax/var"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/attributes"/>
+	<classpathentry excluding="var/" kind="src" path="bower_components/jquery/src/core"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/core/var"/>
+	<classpathentry excluding="var/" kind="src" path="bower_components/jquery/src/css"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/css/var"/>
+	<classpathentry excluding="var/" kind="src" path="bower_components/jquery/src/data"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/data/var"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/effects"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/event"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/exports"/>
+	<classpathentry excluding="var/" kind="src" path="bower_components/jquery/src/manipulation"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/manipulation/var"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/queue"/>
+	<classpathentry excluding="var/" kind="src" path="bower_components/jquery/src/traversing"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/traversing/var"/>
+	<classpathentry kind="src" path="bower_components/jquery/src/var"/>
+	<classpathentry kind="src" path="bower_components/json3/lib"/>
+	<classpathentry excluding="spec/controllers/" kind="src" path="test"/>
+	<classpathentry kind="src" path="test/spec/controllers"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

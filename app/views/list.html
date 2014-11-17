@@ -31,12 +31,12 @@
 
 
         <md-card flex="45" ng-show="preview">
-            <img ng-src="{{preview.image}}">
-            <h3>{{ preview.name }}</h3>
+          <h3>{{ preview.name }}</h3>
 
-            <md-button class="md-fab icon-capture"><i class="fa fa-download"></i> </md-button>
-            <md-button class="md-fab icon-capture"><i class="fa fa-envelope"></i> </md-button>
-            <md-button class="md-fab icon-capture"><i class="fa fa-eye"></i> </md-button>
+            <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-download" ></i> </md-button>
+            <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-envelope"></i> </md-button>
+            <md-button class="md-fab icon-capture"  style="width: 30px; height: 30px" target="_blank" ng-href="{{preview.document}}" ><i class="fa fa-eye"></i> </md-button>
+          <br><img ng-src="{{preview.image}}" width="400px">
         </md-card>
 
     </div>

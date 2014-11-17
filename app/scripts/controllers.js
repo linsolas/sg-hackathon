@@ -48,6 +48,8 @@ angular.module('sgHackathonApp')
             });
         };
 
+
+
         $scope.dialogBasic = function(ev) {
             $mdDialog.show({
                 templateUrl: 'views/vocale.template.html',
@@ -74,28 +76,32 @@ angular.module('sgHackathonApp')
 
         $rootScope.documents = [
         {
-            "name": "Contrat assurance vie",
-            "date": "01/02/2013",
-            "image": "images/yeoman.png",
-            "newDoc": false
+            "name": "Contrat assurance",
+            "date": "18/11/2014",
+            "image": "images/imageAssurance.png",
+            "document": "documents/assurance.pdf",
+            "newDoc": true
         },
         {
             "name": "Livret A",
             "date": "02/03/2014",
-            "image": "toto",
+            "image": "images/imageLivretA.png",
+            "document": "documents/livretA.pdf",
             "newDoc": false
         },
         {
             "name": "Test",
             "date": "17/11/2014",
-            "image": "tata",
+            "image": "images/yeoman.png",
+            "document": "images/yeoman.png",
             "newDoc": false
         },
         {
             "name": "Une image",
             "date": "15/11/2014",
-            "image": "titi",
-            "newDoc": true
+            "image": "images/yeoman.png",
+            "document": "images/yeoman.png",
+            "newDoc": false
         }
     ];
 
