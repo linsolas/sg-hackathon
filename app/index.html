@@ -19,72 +19,21 @@
   </head>
   <body ng-app="sgHackathonApp">
 
+  <div ng-controller="MainCtrl">
+      <header>
+          <md-button ng-click="showListBottomSheet($event)">
+              Mes Actions
+          </md-button>
+          <md-button class="md-primary" ng-click="goToHome()">Le Coffre</md-button>
+          <md-button>Mon Espace Bancaire</md-button>
+      </header>
 
-  <md-tabs selected="data.selectedIndex" center>
-      <md-tab id="tab1" aria-controls="tab1-content">
-          <i class="fa fa-file-archive-o"></i> Documents
-      </md-tab>
-      <md-tab id="tab2" aria-controls="tab2-content">
-          <i class="fa fa-user"></i> Mon profil
-      </md-tab>
-      <md-tab id="tab2" aria-controls="tab1-content">
-          <i class="fa fa-question-circle"></i> Aide
-      </md-tab>
-  </md-tabs>
-
-
-  <ng-switch on="data.selectedIndex" class="tabpanel-container">
-      <div role="tabpanel"
-           id="tab1-content"
-           aria-labelledby="tab1"
-           ng-switch-when="0"
-           md-swipe-left="next()"
-           md-swipe-right="previous()" >
-
-          <div ng-include="'views/main.html'"></div>
-
-      </div>
-      <div role="tabpanel"
-           id="tab2-content"
-           aria-labelledby="tab2"
-           ng-switch-when="1"
-           md-swipe-left="next()"
-           md-swipe-right="previous()" >
-          <div ng-include="'views/about.html'"></div>
-      </div>
-  </ng-switch>
-
-  <!--<md-tabs selected="selectedIndex">-->
-      <!--<md-tab ng-repeat="tab in [ 'Home', 'Documents', 'Help' ]"-->
-              <!--label="{{tab}}">-->
-
-          <!--<div class="demo-tab tab{{$index%4}}" layout="vertical" layout-fill layout-align="space-around center">-->
-              <!--<div ng-bind="tab.content">-->
-
-              <!--</div>-->
-          <!--</div>-->
-      <!--</md-tab>-->
-  <!--</md-tabs>-->
+  </div>
 
 
 
-    <!--&lt;!&ndash; Add your site or application content here &ndash;&gt;-->
-    <!--<div class="container">-->
-      <!--<div class="header">-->
-        <!--<ul class="nav nav-pills pull-right">-->
-          <!--<li class="active"><a ng-href="#">Home</a></li>-->
-          <!--<li><a ng-href="#/about">About</a></li>-->
-          <!--<li><a ng-href="#">Contact</a></li>-->
-        <!--</ul>-->
-        <!--<h3 class="text-muted">sgHackathon</h3>-->
-      <!--</div>-->
+  <div ng-view=""></div>
 
-      <!--<div ng-view=""></div>-->
-
-      <!--<div class="footer">-->
-        <!--<p><i class="fa fa-heart"></i> for SG Hackathon 2014</p>-->
-      <!--</div>-->
-    <!--</div>-->
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>

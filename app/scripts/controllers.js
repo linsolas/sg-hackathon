@@ -1,12 +1,47 @@
 'use strict';
 
 
+
 angular.module('sgHackathonApp')
-    .controller('ListCtrl', function ($scope, $mdDialog, $mdToast) {
+    .controller('HomeCtrl', function ($scope) {
 
-        $scope.selectedIndex = 0;
 
-});
+
+
+    }
+);
+
+
+
+
+
+angular.module('sgHackathonApp')
+    .controller('MainCtrl', function ($scope, $mdBottomSheet, $location) {
+
+        $scope.goToHome = function() {
+            $location.path = '/';
+        };
+
+        $scope.items = [
+            { name: 'Share', icon: 'share' },
+            { name: 'Upload', icon: 'upload' },
+            { name: 'Copy', icon: 'copy' },
+            { name: 'Print', icon: 'print' },
+        ];
+
+        $scope.showListBottomSheet = function($event) {
+            $scope.alert = '';
+            $mdBottomSheet.show({
+                templateUrl: 'views/bottom-menu.template.html',
+                controller: 'MainCtrl',
+                targetEvent: $event
+            }).then(function(clickedItem) {
+                $scope.alert = clickedItem.name + ' clicked!';
+            });
+        };
+
+
+    });
 
 angular.module('sgHackathonApp')
   .controller('ListCtrl', function ($scope, $mdDialog, $mdToast) {
