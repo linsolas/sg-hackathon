@@ -22,8 +22,9 @@ angular.module('sgHackathonApp')
 
         $rootScope.showFiat = false;
 
-        $scope.showFiatCategory = function() {
+        $scope.addFiat = function() {
             $rootScope.showFiat = true;
+            $mdBottomSheet.hide();
         };
 
         $scope.goToHome = function() {
