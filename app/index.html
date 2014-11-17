@@ -20,8 +20,9 @@
   <body ng-app="sgHackathonApp" ng-controller="MainCtrl">
 
   <header>
-      <a ng-href="/"><img src="images/logo_header_refonte_2010.gif"></a>
-      <md-button class="md-primary" ng-click="goToHome()">Le Coffre</md-button>
+      <a ng-href="/" style="margin-left: 10px;"><img src="images/logo_header_refonte_2010.gif"></a>
+
+      <md-button class="md-primary" ng-click="goToHome()">Mon Coffre</md-button>
       <md-button ng-if="where() == 'list'">Mon Espace Bancaire</md-button>
       <md-button ng-if="where() == 'search'">Recherche</md-button>
 

@@ -65,17 +65,14 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location) {
 
-
-        $scope.addFiat = function(str) {
-            $rootScope.categories.push({
-                "name": str,
-                "count": 0,
-                "icon": "fa-car",
-                "newDocs": 0,
-                "newCategory": true
+        $scope.addCategory = function(ev) {
+            $mdDialog.show({
+                templateUrl: 'views/new-category.template.html',
+                targetEvent: ev,
+                controller: 'AddCategoryCtrl'
             });
-            $mdBottomSheet.hide();
         };
+
 
         $scope.goToHome = function() {
             $location.url('/');
@@ -90,7 +87,6 @@ angular.module('sgHackathonApp')
                 templateUrl: 'views/bottom-menu.template.html',
                 controller: 'MainCtrl',
                 targetEvent: $event
-            }).then(function(clickedItem) {
             });
         };
 
@@ -98,11 +94,7 @@ angular.module('sgHackathonApp')
             $mdDialog.show({
                 templateUrl: 'views/vocale.template.html',
                 targetEvent: ev,
-                controller: 'DialogController'
-            }).then(function() {
-                $scope.alert = 'You said "Okay".';
-            }, function() {
-                $scope.alert = 'You cancelled the dialog.';
+                controller: 'SearchPopupCtrl'
             });
         };
 
@@ -156,33 +148,7 @@ angular.module('sgHackathonApp')
                 templateUrl: 'views/popup.template.html',
                 targetEvent: ev,
                 controller: 'DialogController'
-            }).then(function() {
-                $scope.alert = 'You said "Okay".';
-            }, function() {
-                $scope.alert = 'You cancelled the dialog.';
             });
-        };
-
-        $scope.test = function() {
-            $mdToast.show({
-                templateUrl: 'views/notif.template.html',
-                hideDelay: 5000,
-                position: $scope.getToastPosition()
-            });
-        };
-
-
-        $scope.getToastPosition = function() {
-            return Object.keys($scope.toastPosition)
-                .filter(function(pos) { return $scope.toastPosition[pos]; })
-                .join(' ');
-        };
-
-        $scope.toastPosition = {
-            bottom: false,
-            top: true,
-            left: false,
-            right: true
         };
 
         $scope.hide = function() {
@@ -196,7 +162,7 @@ angular.module('sgHackathonApp')
 
 
 angular.module('sgHackathonApp')
-    .controller('DialogController', function ($rootScope, $scope, $mdDialog, $timeout, $location) {
+    .controller('DialogController', function ($rootScope, $scope, $mdDialog) {
 
         $scope.hide = function() {
             $mdDialog.hide();
@@ -212,6 +178,42 @@ angular.module('sgHackathonApp')
             $mdDialog.hide();
         };
 
+    });
+
+
+angular.module('sgHackathonApp')
+    .controller('AddCategoryCtrl', function ($rootScope, $scope, $mdDialog, $mdBottomSheet) {
+
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
+        $scope.categoryName = "";
+
+        $scope.validate = function() {
+            console.log('ADD category %s...', $scope.categoryName);
+            $rootScope.categories.push({
+                "name": $scope.categoryName,
+                "count": 0,
+                "icon": "fa-car",
+                "newDocs": 0,
+                "newCategory": true
+            });
+            $mdBottomSheet.hide();
+            $mdDialog.hide();
+        };
+
+    });
+
+
+
+angular.module('sgHackathonApp')
+    .controller('SearchPopupCtrl', function ($rootScope, $scope, $mdDialog, $timeout, $location) {
+
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
         $scope.displayResult = false;
 
         $timeout(function() {
@@ -224,7 +226,7 @@ angular.module('sgHackathonApp')
         }, 5000);
 
 
-});
+    });
 
 
 angular.module('sgHackathonApp')
