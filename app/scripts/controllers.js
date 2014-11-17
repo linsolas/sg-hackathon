@@ -65,7 +65,7 @@ angular.module('sgHackathonApp')
         {
             "name": "Contrat assurance vie",
             "date": "01/02/2013",
-            "image": "images/screen1.png",
+            "image": "images/yeoman.png",
             "newDoc": false
         },
         {
