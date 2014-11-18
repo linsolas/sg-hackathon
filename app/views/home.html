@@ -1,4 +1,4 @@
-<div id="cards">
+<div id="cards" style="position: absolute; width: 100%">
     <div layout="horizontal">
         <md-card flex="30" ng-click="goTo('list')" ng-repeat="cat in categories | startFrom: 0 | limitTo: 3">
             <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>

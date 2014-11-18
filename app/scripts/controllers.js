@@ -1,12 +1,16 @@
 'use strict';
 
 
-
 angular.module('sgHackathonApp')
-    .controller('HomeCtrl', function ($rootScope, $scope, $location) {
+    .controller('HomeCtrl', function ($rootScope, $scope, $location, $timeout) {
 
         $scope.goTo = function(path) {
-            $location.url('/' + path);
+            jQuery('#cards').animate({
+                left: -2000
+            }, 1000);
+            $timeout(function() {
+                $location.url('/' + path);
+            }, 1000);
         };
 
         $rootScope.categories = [
@@ -75,12 +79,7 @@ angular.module('sgHackathonApp')
 
 
         $scope.goToHome = function() {
-//            jQuery('#cards').animate({
-//                left: -2000
-//            }, 1000);
-            $timeout(function() {
-                $location.url('/');
-            }, 2000);
+            $location.url('/');
         };
 
         $scope.where = function() {
