@@ -175,29 +175,37 @@ angular.module('sgHackathonApp')
 
 
 angular.module('sgHackathonApp')
-    .controller('DialogController', function ($rootScope, $scope, $mdDialog) {
+    .controller('DialogController', function ($rootScope, $scope, $mdDialog, $timeout) {
 
         $scope.hide = function() {
             $mdDialog.hide();
         };
 
+        $scope.showCapture = false;
         $scope.documentName = "";
 
         $scope.addDoc = function() {
             if ($scope.documentName == '') {
                 $scope.documentName = "Nouveau Document";
             }
-            $rootScope.documents.push({
-                "name": $scope.documentName,
-                "date": "18/11/2014",
-                "image": "",
-                "ext": "png",
-                "newDoc": true
-            });
-            $mdDialog.hide();
+            $scope.showCapture = true;
+            $timeout(function() {
+                $rootScope.documents.push({
+                    "name": $scope.documentName,
+                    "date": "18/11/2014",
+                    "image": "",
+                    "ext": "png",
+                    "newDoc": true
+                });
+                $mdDialog.hide();
+            }, 2000);
         };
 
+
+
+
     });
+
 
 
 angular.module('sgHackathonApp')
