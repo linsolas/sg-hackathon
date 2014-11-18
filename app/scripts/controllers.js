@@ -181,9 +181,14 @@ angular.module('sgHackathonApp')
             $mdDialog.hide();
         };
 
-        $scope.addDoc = function(type) {
+        $scope.documentName = "";
+
+        $scope.addDoc = function() {
+            if ($scope.documentName == '') {
+                $scope.documentName = "Nouveau Document";
+            }
             $rootScope.documents.push({
-                "name": "Nouveau " + type,
+                "name": $scope.documentName,
                 "date": "18/11/2014",
                 "image": "",
                 "ext": "png",

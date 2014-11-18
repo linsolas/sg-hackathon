@@ -1,6 +1,8 @@
 <md-dialog aria-label="Suspect app">
     <md-content>
         <h2><i class="fa fa-plus"></i> Ajouter un document</h2>
+        <p>Veuillez saisir le nom du document</p>
+        <md-text-float label="Nom" ng-model="documentName" id="docName"></md-text-float>
         <p>Merci de choisir la source du document</p>
 
         <md-button class="md-raised icon-capture" ng-click="addDoc('photo')"><i class="fa fa-camera"></i> Photo</md-button>
