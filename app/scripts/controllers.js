@@ -40,7 +40,7 @@ angular.module('sgHackathonApp')
                 "name": "Santé",
                 "count": 12,
                 "icon": "fa-stethoscope",
-                "newDocs": 2,
+                "newDocs": 0,
                 "newCategory": false
             },
             {
@@ -68,7 +68,7 @@ angular.module('sgHackathonApp')
                 "name": "Loisirs",
                 "count": 27,
                 "icon": "fa-soccer-ball-o",
-                "newDocs": 1,
+                "newDocs": 0,
                 "newCategory": false
             }
         ];
