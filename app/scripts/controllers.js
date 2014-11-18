@@ -89,7 +89,7 @@ angular.module('sgHackathonApp')
         $scope.showListBottomSheet = function($event) {
             $mdBottomSheet.show({
                 templateUrl: 'views/bottom-menu.template.html',
-                controller: 'MainCtrl',
+                controller: 'BottomCtrl',
                 targetEvent: $event
             });
         };
@@ -109,6 +109,7 @@ angular.module('sgHackathonApp')
                 controller: 'AddCategoryCtrl'
             });
         };
+
 
     });
 
