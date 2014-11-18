@@ -78,15 +78,6 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location, $timeout) {
 
-        $scope.addCategory = function(ev) {
-            $mdDialog.show({
-                templateUrl: 'views/new-category.template.html',
-                targetEvent: ev,
-                controller: 'AddCategoryCtrl'
-            });
-        };
-
-
         $scope.goToHome = function() {
             $location.url('/');
         };
@@ -98,7 +89,7 @@ angular.module('sgHackathonApp')
         $scope.showListBottomSheet = function($event) {
             $mdBottomSheet.show({
                 templateUrl: 'views/bottom-menu.template.html',
-                controller: 'MainCtrl',
+                controller: 'BottomCtrl',
                 targetEvent: $event
             });
         };
@@ -113,6 +104,21 @@ angular.module('sgHackathonApp')
 
 
     });
+
+
+
+angular.module('sgHackathonApp')
+    .controller('BottomCtrl', function ($rootScope, $scope, $mdDialog, $location) {
+
+        $scope.addCategory = function(ev) {
+            $mdDialog.show({
+                templateUrl: 'views/new-category.template.html',
+                targetEvent: ev,
+                controller: 'AddCategoryCtrl'
+            });
+        };
+
+});
 
 angular.module('sgHackathonApp')
   .controller('ListCtrl', function ($rootScope, $scope, $mdDialog, $location) {
