@@ -130,3 +130,7 @@ footer {
 #search-results {
     margin: 10px;
 }
+
+.green {
+  background-color: #5cb85c;
+}
