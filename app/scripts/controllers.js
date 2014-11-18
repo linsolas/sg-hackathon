@@ -270,14 +270,14 @@ angular.module('sgHackathonApp')
 
     $scope.results = [
         {
-            "name": "Facture EDF - Octobre 2014",
+            "name": "Facture EDF - 10/2014",
             "date": "04/11/2014",
             "image": "images/edf.jpg",
             "document": "documents/edf.pdf",
             "ext": "pdf"
         },
         {
-            "name": "Facture EDF - Septembre 2014",
+            "name": "Facture EDF - 09/2014",
             "date": "05/10/2014",
             "image": "images/edf.jpg",
             "document": "documents/edf.pdf",

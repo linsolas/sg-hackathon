@@ -2,7 +2,7 @@
     <h2><i class="fa fa-search"></i> Résultats de la recherche "Facture EDF" : <strong>{{ results.length }}</strong> résultats</h2>
 
     <div layout="horizontal">
-        <md-card flex="30" ng-repeat="doc in results">
+        <md-card flex="45" ng-repeat="doc in results">
             <h2><i class="fa {{ doc.icon }}"></i> {{ doc.name }}</h2>
             <span class="label label-success" ng-show="$index == 0">Meilleur résultat</span>
             <br>

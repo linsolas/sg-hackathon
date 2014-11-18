@@ -1,16 +1,17 @@
 <div id="cards" style="position: absolute; width: 100%">
     <div layout="horizontal">
         <md-card flex="30" ng-click="goTo('list', '{{cat.name}}')" ng-repeat="cat in categories | startFrom: 0 | limitTo: 3">
-            <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>
+            <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}<i class="fa fa-edit pull-right"></i></h2>
             <span ng-show="cat.newCategory" class="label label-success">Nouveau</span>
             <strong>{{ cat.count }}</strong> document{{ cat.count > 1 ? 's' : '' }}
+            <br>
             <br>
             <span class="badge green" ng-show="cat.newDocs > 0">{{ cat.newDocs }} nouveau{{ cat.newDocs > 1 ? 'x' : '' }}</span>
         </md-card>
     </div>
     <div layout="horizontal">
         <md-card flex="30" ng-click="goTo('list', '{{cat.name}}')" ng-repeat="cat in categories | startFrom: 3 | limitTo: 3">
-            <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>
+            <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}<i class="fa fa-edit pull-right"></i></h2>
             <span ng-show="cat.newCategory" class="label label-success">Nouveau</span>
             <strong>{{ cat.count }}</strong> document{{ cat.count > 1 ? 's' : '' }}
             <br>
@@ -19,7 +20,7 @@
     </div>
     <div layout="horizontal">
         <md-card flex="30" ng-click="goTo('list', '{{cat.name}}')" ng-repeat="cat in categories | startFrom: 6 | limitTo: 3">
-            <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}</h2>
+            <h2><i class="fa {{ cat.icon }}"></i> {{ cat.name }}<i class="fa fa-edit pull-right"></i></h2>
             <span ng-show="cat.newCategory" class="label label-success">Nouveau</span>
             <strong>{{ cat.count }}</strong> document{{ cat.count > 1 ? 's' : '' }}
             <br>
