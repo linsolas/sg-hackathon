@@ -20,12 +20,17 @@
   <body ng-app="sgHackathonApp" ng-controller="MainCtrl">
 
   <header>
-      <a ng-href="/" style="margin-left: 10px;"><img src="images/logo_header_refonte_2010.gif"></a>
+      <a ng-href="/" style="margin-left: 10px;" id="logo"><img src="images/logo_header_refonte_2010.gif"></a>
 
-      <md-button class="md-primary" ng-click="goToHome()">Mon Coffre</md-button>
-      <md-button ng-if="where() == 'list'">Mon Espace Bancaire</md-button>
-      <md-button ng-if="where() == 'search'">Recherche</md-button>
-
+      <ul id="breadcrumb">
+          <li><a ng-href="/"><i class="fa fa-home"></i> Mon Coffre</a></li>
+          <li>
+              <a ng-href="/" ng-if="whereIam() != '/'">
+                <span ng-show="whereIam() == '/list'"><i class="fa fa-bank"></i> Mon Espace Bancaire</span>
+                <span ng-if="whereIam() == '/search'"><i class="fa fa-search"></i> Ma Recherche</span>
+              </a>
+          </li>
+      </ul>
     <md-button style="float: right; margin: 0; font-size: 30px; margin-right:10px; margin-top:-5px;" class="md-fab" ng-click="dialogBasic($event)"><i class="fa fa-microphone"></i></md-button>
     <md-text-float style="float: right; margin: 0; padding: 0" label="Recherche" ng-model="search"></md-text-float>
   </header>

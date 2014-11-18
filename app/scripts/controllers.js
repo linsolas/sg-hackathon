@@ -82,8 +82,8 @@ angular.module('sgHackathonApp')
             $location.url('/');
         };
 
-        $scope.where = function() {
-            return $location.path().substring(1);
+        $scope.whereIam = function() {
+            return $location.path();
         };
 
         $scope.showListBottomSheet = function($event) {
