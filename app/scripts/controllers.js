@@ -108,6 +108,7 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
   .controller('ListCtrl', function ($rootScope, $scope, $mdDialog, $mdToast) {
 
+        $scope.catName = "Bancaire";
         $scope.preview = null;
 
         $scope.previewDoc = function(doc) {
@@ -163,9 +164,6 @@ angular.module('sgHackathonApp')
             $mdDialog.hide();
         };
 
-//        $scope.test();
-
-
     });
 
 
@@ -181,6 +179,7 @@ angular.module('sgHackathonApp')
                 "name": "Nouveau " + type,
                 "date": "18/11/2014",
                 "image": "",
+                "ext": "",
                 "newDoc": true
             });
             $mdDialog.hide();

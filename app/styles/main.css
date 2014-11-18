@@ -91,7 +91,7 @@ md-card h2 {
     padding-bottom: 5px;
 }
 
-md-card h2 i {
+md-card h2 i:first {
     color: red;
 }
 

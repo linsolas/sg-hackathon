@@ -3,7 +3,7 @@
 
     <div layout="horizontal">
         <md-card flex="45">
-            <h2><i class="fa fa-bank"></i> Contrats</h2>
+            <h2><i class="fa fa-bank"></i> {{ catName }} <i class="fa fa-edit pull-right"></i> </h2>
             <strong>{{ documents.length }}</strong> documents
             <br>
 
@@ -28,7 +28,7 @@
                 </tbody>
             </table>
 
-            <md-button class="md-fab md-primary pull-right" ng-click="dialogBasic($event)"><i class="fa fa-plus"></i> Add</md-button>
+            <md-button class="md-fab  pull-right" ng-click="dialogBasic($event)" style="font-size: 30px"><i class="fa fa-plus"></i></md-button>
         </md-card>
 
 
@@ -38,6 +38,7 @@
             <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-download" ></i> </md-button>
             <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-envelope"></i> </md-button>
             <md-button class="md-fab icon-capture"  style="width: 30px; height: 30px" target="_blank" ng-href="{{preview.document}}" ><i class="fa fa-eye"></i> </md-button>
+            <md-button class="md-fab md-warn icon-capture"  style="width: 30px; height: 30px"><i class="fa fa-trash"></i></md-button>
             <hr>
             <img ng-src="{{preview.image}}" width="400px">
         </md-card>
