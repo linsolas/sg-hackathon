@@ -19,6 +19,45 @@
   </head>
   <body ng-app="sgHackathonApp" ng-controller="MainCtrl">
 
+  <style>
+      #loginScreen {
+          position: absolute;
+          z-index: 1000;
+          min-height: 100%;
+      }
+      #img-top {
+          display: flex;
+          position: fixed;
+          left: 0;
+          top: 0;
+          height: 70%;
+          width: 100%;
+      }
+      #img-center {
+          display: flex;
+          position: fixed;
+          top: 30%;
+          height: 40%;
+          width: 30%;
+          left: 35%;
+          z-index: 100;
+      }
+      #img-bottom {
+          display: flex;
+          position: fixed;
+          top: 50%;
+          height: 50%;
+          width: 100%;
+      }
+  </style>
+
+  <div ng-show="displayLogin" id="loginScreen" ng-click="logIn()">
+      <img src="images/login-screen-top.png" id="img-top"/>
+      <img src="images/rotating-lock.png" id="img-center"/>
+      <!--<a href="#"><img src="images/rotating-lock.png" id="img-lock" /></a>-->
+      <img src="images/login-screen-bottom.png" id="img-bottom"/>
+  </div>
+
   <header>
       <a ng-href="#/" style="margin-left: 10px;" id="logo">
           <img src="images/logo_header_refonte_2010.gif">

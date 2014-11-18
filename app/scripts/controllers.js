@@ -13,6 +13,12 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('HomeCtrl', function ($rootScope, $scope, $location, $timeout) {
 
+        $rootScope.displayLogin = $location.search().login !== undefined;
+        console.log('DISPLAY ? ' + $rootScope.displayLogin);
+
+
+
+
         $scope.goTo = function(path, cardName) {
             jQuery('#cards').animate({
                 left: -2000
@@ -77,6 +83,49 @@ angular.module('sgHackathonApp')
 
 angular.module('sgHackathonApp')
     .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location, $timeout) {
+
+        var rotate = function() {
+            console.log('rotate');
+            var $elem = jQuery('#img-center');
+
+            // we use a pseudo object for the animation
+            // (starts from `0` to `angle`), you can name it as you want
+            jQuery({deg: 0}).animate({deg: 90}, {
+                duration: 1000,
+                step: function(now) {
+                    // in the step-callback (that is fired each step of the animation),
+                    // you can use the `now` paramter which contains the current
+                    // animation-position (`0` up to `angle`)
+                    $elem.css({
+                        '-moz-transform':'rotate('+now+'deg)',
+                        '-webkit-transform':'rotate('+now+'deg)',
+                        '-o-transform':'rotate('+now+'deg)',
+                        '-ms-transform':'rotate('+now+'deg)',
+                        'transform':'rotate('+now+'deg)'
+                    });
+                }
+            });
+        };
+
+        $scope.logIn = function() {
+            console.log('Log in...');
+            rotate();
+//            jQuery('#img-lock').animate({
+//                transform: "rotate(180deg)"
+//            }, 1000);
+            $timeout(function() {
+                jQuery('#img-center').hide();
+                jQuery('#img-top').animate({
+                    top: -1000
+                }, 1000);
+                jQuery('#img-bottom').animate({
+                    top: 3000
+                }, 1000);
+            }, 1000);
+            $timeout(function() {
+                $rootScope.displayLogin = false;
+            }, 2000);
+        };
 
         $scope.goToHome = function() {
             $location.url('/');
