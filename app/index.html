@@ -48,7 +48,7 @@
 
 
   <footer>
-      <md-button ng-click="showListBottomSheet($event)"><i class="fa fa-random"></i> Mes Actions</md-button>
+      <md-button ng-if="whereIam() != '/login'" ng-click="showListBottomSheet($event)"><i class="fa fa-random"></i> Mes Actions</md-button>
   </footer>
 
     <!-- build:js(.) scripts/oldieshim.js -->
