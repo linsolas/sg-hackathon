@@ -8,9 +8,11 @@
             <br>
             <img ng-src="{{ doc.image }}">
             <hr>
-            <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-download" ></i> </md-button>
-            <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-envelope"></i> </md-button>
-            <md-button class="md-fab icon-capture"  style="width: 30px; height: 30px" target="_blank" ng-href="{{preview.document}}" ><i class="fa fa-eye"></i> </md-button>
+            <div style="text-align: center">
+                <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-download" ></i> </md-button>
+                <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-envelope"></i> </md-button>
+                <md-button class="md-fab icon-capture"  style="width: 30px; height: 30px" target="_blank" ng-href="{{preview.document}}" ><i class="fa fa-eye"></i> </md-button>
+            </div>
         </md-card>
     </div>
 </div>
