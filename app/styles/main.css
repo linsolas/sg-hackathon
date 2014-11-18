@@ -102,6 +102,9 @@ header {
     box-shadow: 0 10px 10px lightgrey;
 
 }
+header #logo {
+
+}
 
 
 .content {
@@ -130,6 +133,10 @@ footer {
 #search-results {
     margin: 10px;
 }
+
+
+
+/* BREADCRUMB */
 
 #breadcrumb {
     list-style: none;
