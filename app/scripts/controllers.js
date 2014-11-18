@@ -2,6 +2,15 @@
 
 
 angular.module('sgHackathonApp')
+    .controller('LoginCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location, $timeout) {
+
+        $scope.Login = function() {
+            $location.url('/');
+        };
+    });
+
+
+angular.module('sgHackathonApp')
     .controller('HomeCtrl', function ($rootScope, $scope, $location, $timeout) {
 
         $scope.goTo = function(path, cardName) {
