@@ -25,5 +25,8 @@
             <br>
             <span class="badge green" ng-show="cat.newDocs > 0">{{ cat.newDocs }} nouveau{{ cat.newDocs > 1 ? 'x' : '' }}</span>
         </md-card>
+        <md-button class="md-fab" style="margin-left: 20px; margin-top: 20px" ng-click="addCategory($event);"><i class="fa fa-plus"></i></md-button>
+        <div class="clearfix"></div>
     </div>
+
 </div>

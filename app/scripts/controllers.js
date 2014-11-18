@@ -102,20 +102,28 @@ angular.module('sgHackathonApp')
             });
         };
 
+        $scope.addCategory = function($event) {
+            $mdDialog.show({
+                templateUrl: 'views/new-category.template.html',
+                targetEvent: $event,
+                controller: 'AddCategoryCtrl'
+            });
+        };
+
 
     });
 
 
 
 angular.module('sgHackathonApp')
-    .controller('BottomCtrl', function ($rootScope, $scope, $mdDialog, $timeout) {
+    .controller('BottomCtrl', function ($rootScope, $scope, $mdDialog) {
 
-        $scope.addCategory = function(ev) {
-                $mdDialog.show({
-                    templateUrl: 'views/new-category.template.html',
-                    targetEvent: ev,
-                    controller: 'AddCategoryCtrl'
-                });
+        $scope.addCategory = function($event) {
+            $mdDialog.show({
+                templateUrl: 'views/new-category.template.html',
+                targetEvent: $event,
+                controller: 'AddCategoryCtrl'
+            });
         };
 
 });
