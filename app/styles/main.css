@@ -106,13 +106,29 @@ header #logo img {
     vertical-align: top;
 }
 
+
 header #search-field {
-    float: right;
+    position: absolute;
+    right: 140px;
+    display: inline-block;
     margin: 0;
     padding: 0;
+    width: 200px;
 }
+
 header #search-voice {
-    float: right;
+    position: absolute;
+    right: 80px;
+    font-size: 20px;
+    margin-right:10px;
+    margin-top:-5px;
+    height: 40px;
+    width: 40px;
+}
+
+header #exit {
+    position: absolute;
+    right: 10px;
     font-size: 20px;
     margin-right:10px;
     margin-top:-5px;
