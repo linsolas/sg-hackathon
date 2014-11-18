@@ -132,6 +132,10 @@ header #exit {
 }
 
 .content {
+    /*background: linear-gradient(white, #EEE);*/
+    /*padding-bottom: 50px;*/
+    /*display: table-row;*/
+    flex-direction: column;
     background: linear-gradient(white, #EEE);
 }
 
