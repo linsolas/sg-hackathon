@@ -63,7 +63,7 @@ angular.module('sgHackathonApp')
 
 
 angular.module('sgHackathonApp')
-    .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location) {
+    .controller('MainCtrl', function ($rootScope, $scope, $mdBottomSheet, $mdDialog, $location, $timeout) {
 
         $scope.addCategory = function(ev) {
             $mdDialog.show({
@@ -75,7 +75,12 @@ angular.module('sgHackathonApp')
 
 
         $scope.goToHome = function() {
-            $location.url('/');
+//            jQuery('#cards').animate({
+//                left: -2000
+//            }, 1000);
+            $timeout(function() {
+                $location.url('/');
+            }, 2000);
         };
 
         $scope.where = function() {
