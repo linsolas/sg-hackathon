@@ -23,16 +23,16 @@
       <a ng-href="/" style="margin-left: 10px;" id="logo"><img src="images/logo_header_refonte_2010.gif"></a>
 
       <ul id="breadcrumb">
-          <li><a ng-href="/"><i class="fa fa-home"></i> Mon Coffre</a></li>
+          <li><a ng-href="#/"><i class="fa fa-home"></i> Mon Coffre</a></li>
           <li>
-              <a ng-href="/" ng-if="whereIam() != '/'">
+              <a ng-href="#/" ng-if="whereIam() != '/'">
                 <span ng-show="whereIam() == '/list'"><i class="fa fa-bank"></i> Mon Espace Bancaire</span>
                 <span ng-if="whereIam() == '/search'"><i class="fa fa-search"></i> Ma Recherche</span>
               </a>
           </li>
       </ul>
-    <md-button style="float: right; margin: 0; font-size: 30px; margin-right:10px; margin-top:-5px;" class="md-fab" ng-click="dialogBasic($event)"><i class="fa fa-microphone"></i></md-button>
-    <md-text-float style="float: right; margin: 0; padding: 0" label="Recherche" ng-model="search"></md-text-float>
+    <md-button id="search-voice" class="md-fab" ng-click="dialogBasic($event)"><i class="fa fa-microphone"></i></md-button>
+    <md-text-float id="search-field" label="Recherche" ng-model="search"></md-text-float>
   </header>
 
   <div class="clearfix"></div>
