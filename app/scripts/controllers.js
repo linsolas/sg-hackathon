@@ -4,12 +4,12 @@
 angular.module('sgHackathonApp')
     .controller('HomeCtrl', function ($rootScope, $scope, $location, $timeout) {
 
-        $scope.goTo = function(path) {
+        $scope.goTo = function(path, cardName) {
             jQuery('#cards').animate({
                 left: -2000
             }, 1000);
             $timeout(function() {
-                $location.url('/' + path);
+                $location.url('/' + path + '?card=' + cardName);
             }, 1000);
         };
 
@@ -83,7 +83,7 @@ angular.module('sgHackathonApp')
         };
 
         $scope.where = function() {
-            return $location.url().substring(1);
+            return $location.path().substring(1);
         };
 
         $scope.showListBottomSheet = function($event) {
@@ -106,49 +106,56 @@ angular.module('sgHackathonApp')
     });
 
 angular.module('sgHackathonApp')
-  .controller('ListCtrl', function ($rootScope, $scope, $mdDialog, $mdToast) {
+  .controller('ListCtrl', function ($rootScope, $scope, $mdDialog, $location) {
 
-        $scope.catName = "Bancaire";
+        var card = $location.search().card;
+        var predefined = card === 'Bancaire' || card === 'Santé' || card === 'Habitation'
+                      || card === 'Transports' || card === 'Administratif' || card === 'Loisirs';
+
+        $scope.catName = card;
         $scope.preview = null;
 
         $scope.previewDoc = function(doc) {
             $scope.preview = doc;
         };
 
-        $rootScope.documents = [
-        {
-            "name": "Contrat assurance",
-            "date": "18/11/2014",
-            "image": "images/imageAssurance.png",
-            "document": "documents/assurance.pdf",
-            "ext": "pdf",
-            "newDoc": true
-        },
-        {
-            "name": "Livret A",
-            "date": "02/03/2014",
-            "image": "images/imageLivretA.png",
-            "document": "documents/livretA.pdf",
-            "ext": "pdf",
-            "newDoc": false
-        },
-        {
-            "name": "Mon document",
-            "date": "17/11/2014",
-            "image": "images/yeoman.png",
-            "document": "images/yeoman.png",
-            "ext": "doc",
-            "newDoc": false
-        },
-        {
-            "name": "Mes comptes",
-            "date": "15/11/2014",
-            "image": "images/yeoman.png",
-            "document": "images/yeoman.png",
-            "ext": "xls",
-            "newDoc": false
+        $rootScope.documents = [];
+        if (predefined) {
+            $rootScope.documents = [
+                {
+                    "name": "Contrat assurance",
+                    "date": "18/11/2014",
+                    "image": "images/imageAssurance.png",
+                    "document": "documents/assurance.pdf",
+                    "ext": "pdf",
+                    "newDoc": true
+                },
+                {
+                    "name": "Livret A",
+                    "date": "02/03/2014",
+                    "image": "images/imageLivretA.png",
+                    "document": "documents/livretA.pdf",
+                    "ext": "pdf",
+                    "newDoc": false
+                },
+                {
+                    "name": "Mon document",
+                    "date": "17/11/2014",
+                    "image": "images/yeoman.png",
+                    "document": "images/yeoman.png",
+                    "ext": "doc",
+                    "newDoc": false
+                },
+                {
+                    "name": "Mes comptes",
+                    "date": "15/11/2014",
+                    "image": "images/yeoman.png",
+                    "document": "images/yeoman.png",
+                    "ext": "xls",
+                    "newDoc": false
+                }
+            ];
         }
-    ];
 
 
 
@@ -179,7 +186,7 @@ angular.module('sgHackathonApp')
                 "name": "Nouveau " + type,
                 "date": "18/11/2014",
                 "image": "",
-                "ext": "",
+                "ext": "png",
                 "newDoc": true
             });
             $mdDialog.hide();
