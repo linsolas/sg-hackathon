@@ -20,7 +20,10 @@
   <body ng-app="sgHackathonApp" ng-controller="MainCtrl">
 
   <header>
-      <a ng-href="#/" style="margin-left: 10px;" id="logo"><img src="images/logo_header_refonte_2010.gif"></a>
+      <a ng-href="#/" style="margin-left: 10px;" id="logo">
+          <img src="images/logo_header_refonte_2010.gif">
+          <img src="images/sg-150ans.png" width="44px" height="44px">
+      </a>
 
       <ul id="breadcrumb" ng-if="whereIam() != '/login'">
           <li><a ng-href="#/"><i class="fa fa-home"></i> Mon Coffre</a></li>
