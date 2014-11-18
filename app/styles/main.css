@@ -122,12 +122,12 @@ margin-left:30px;
 footer {
     text-align: center;
     border-top: solid 1px darkgray;
-    height: 25px;
+    height: 35px;
     position: absolute;
-    bottom: 25px;
-    left: 0;
+    bottom: 0;
     width: 100%;
     font-size: 20px;
+    background: white;
 }
 
 #search-results {
