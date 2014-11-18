@@ -110,14 +110,12 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('BottomCtrl', function ($rootScope, $scope, $mdDialog, $timeout) {
 
-        $scope.addCategory = function($event) {
-            $timeout(function() {
+        $scope.addCategory = function(ev) {
                 $mdDialog.show({
                     templateUrl: 'views/new-category.template.html',
-                    targetEvent: $event,
+                    targetEvent: ev,
                     controller: 'AddCategoryCtrl'
                 });
-            }, 1000);
         };
 
 });
