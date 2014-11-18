@@ -132,11 +132,8 @@ header #exit {
 }
 
 .content {
-    /*background: linear-gradient(white, #EEE);*/
-    /*padding-bottom: 50px;*/
-    /*display: table-row;*/
     flex-direction: column;
-    background: linear-gradient(white, #EEE);
+    margin-bottom: 40px;
 }
 
 #cards {
@@ -145,16 +142,21 @@ header #exit {
 #cards h2 i:first-child {
     color: red;
 }
+#cards h2 i:last-child {
+    color: darkgray;
+}
 
 footer {
     text-align: center;
     border-top: solid 1px darkgray;
+    box-shadow: 0 -5px 5px lightgrey;
     height: 35px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-size: 20px;
     background: white;
+    z-index: 7;
 }
 
 #search-results {
