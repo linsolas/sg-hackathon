@@ -123,7 +123,7 @@ angular.module('sgHackathonApp')
         if (predefined) {
             $rootScope.documents = [
                 {
-                    "name": "Contrat assurance",
+                    "name": "Prêt Expresso",
                     "date": "18/11/2014",
                     "image": "images/imageAssurance.png",
                     "document": "documents/assurance.pdf",
@@ -259,6 +259,21 @@ angular.module('sgHackathonApp')
 angular.module('sgHackathonApp')
     .controller('SearchCtrl', function ($scope) {
 
-
+    $scope.results = [
+        {
+            "name": "Facture EDF - Octobre 2014",
+            "date": "04/11/2014",
+            "image": "images/edf.jpg",
+            "document": "documents/edf.pdf",
+            "ext": "pdf"
+        },
+        {
+            "name": "Facture EDF - Septembre 2014",
+            "date": "05/10/2014",
+            "image": "images/edf.jpg",
+            "document": "documents/edf.pdf",
+            "ext": "pdf"
+        }
+    ]
 
 });

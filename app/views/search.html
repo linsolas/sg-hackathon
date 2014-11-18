@@ -1,6 +1,16 @@
-<h1><i class="fa fa-search"></i> Résultats de recherche</h1>
+<div id="search-results">
+    <h2><i class="fa fa-search"></i> Résultats de la recherche "Facture EDF" : <strong>{{ results.length }}</strong> résultats</h2>
 
-<h3>Facture EDF</h3>
-
-<strong>1</strong> résultat
-
+    <div layout="horizontal">
+        <md-card flex="30" ng-repeat="doc in results">
+            <h2><i class="fa {{ doc.icon }}"></i> {{ doc.name }}</h2>
+            <span class="label label-success" ng-show="$index == 0">Meilleur résultat</span>
+            <br>
+            <img ng-src="{{ doc.image }}">
+            <hr>
+            <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-download" ></i> </md-button>
+            <md-button class="md-fab icon-capture" style="width: 30px; height: 30px"><i class="fa fa-envelope"></i> </md-button>
+            <md-button class="md-fab icon-capture"  style="width: 30px; height: 30px" target="_blank" ng-href="{{preview.document}}" ><i class="fa fa-eye"></i> </md-button>
+        </md-card>
+    </div>
+</div>
