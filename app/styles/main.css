@@ -132,8 +132,9 @@ header #exit {
 }
 
 .content {
-    flex-direction: column;
-    margin-bottom: 50px;
+    /*flex-direction: column;*/
+    height: 100%;
+    margin-bottom: 40px;
 }
 
 #cards {
